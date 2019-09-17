@@ -18,8 +18,8 @@ function generateNewGrid() {
 
 generateNewGrid();
 
-
-const words = ["DIANA", "ARIA", "CASA", "NAVE"];
+const alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "Z"]
+const words = ["TEST", "AIR", "HOUSE", "BOAT"];
 
 function getRandomNumber(max) {
   return Math.floor(Math.random() * Math.floor(max));
@@ -95,7 +95,8 @@ words.forEach(function(word) {
 let print = "";
 grid.forEach(function(rows){
   rows.forEach(function(columns) {
-    let letter = (typeof columns == 'number') ? "0" : columns;
+    let randomAlphabetWord = alphabet[getRandomNumber(alphabet.length)];
+    let letter = (typeof columns == 'number') ? randomAlphabetWord : columns;
     print += letter + " ";
   });
   print += "\n"
